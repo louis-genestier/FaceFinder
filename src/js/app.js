@@ -8,7 +8,7 @@ var sarko = require('/img/sarkozy.png');
 
 let imgs = [{
   src: bhl,
-  name: 'Bernard-Henri Lévy'
+  name: ['Bernard-Henri Lévy', ]
 },
 {
   src: mimi,
@@ -24,7 +24,7 @@ randomize();
 
 document.querySelector('input').addEventListener('keydown', function(e) {
   if(e.keyCode == 13) {
-    if (this.value == name) {
+    if (!this.value.localeCompare(name, undefined, {sensitivity: 'base'})) {
       this.setCustomValidity('');
       updateScore();
       this.value = '';
