@@ -25,11 +25,12 @@ randomize();
 document.querySelector('input').addEventListener('keydown', function(e) {
   if(e.keyCode == 13) {
     if (this.value == name) {
+      this.setCustomValidity('');
       updateScore();
       this.value = '';
       randomize();
     } else {
-      console.log(this);
+      this.setCustomValidity("Invalid field.");
     }
   }
 })
@@ -47,6 +48,5 @@ function randomize() {
   } else {
     img.setAttribute("src", imgs[random].src);
     name = imgs[random].name;
-  }
-  
+  } 
 }
