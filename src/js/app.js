@@ -1,28 +1,52 @@
 let img = document.querySelector('img');
-let path = './img/';
 var score = 0;
+var name;
+
+var bhl = require('/img/bhl.png');
+var mimi = require('/img/mimimathy.png');
+var sarko = require('/img/sarkozy.png');
 
 let imgs = [{
-  src: 'bhl.png',
+  src: bhl,
   name: 'Bernard-Henri Lévy'
 },
 {
-  src: 'mimimathy.png',
+  src: mimi,
   name: 'Mimi Mathy'
 },
 {
-  src: 'sarkozy.png',
+  src: sarko,
   name: 'Nicolas Sarkozy'
 }
 ];
 
-document.querySelector('button').addEventListener('click', function() {
-  randomize();
+randomize();
+
+document.querySelector('input').addEventListener('keydown', function(e) {
+  if(e.keyCode == 13) {
+    if (this.value == name) {
+      updateScore();
+      this.value = '';
+      randomize();
+    } else {
+      console.log(this);
+    }
+  }
 })
+
+function updateScore() {
+  score++;
+  document.querySelector('h2').innerHTML = 'Score: ' + score;
+}
 
 function randomize() {
   var max = imgs.length;
   var random = Math.floor(Math.random() * Math.floor(max));
-  img.setAttribute("src", path + imgs[random].src);
-  document.querySelector('p').innerHTML = imgs[random].name;
+  if (name == imgs[random].name) {
+    randomize();
+  } else {
+    img.setAttribute("src", imgs[random].src);
+    name = imgs[random].name;
+  }
+  
 }
