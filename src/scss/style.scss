@@ -24,8 +24,14 @@ h2 {
 }
 
 input {
+  border: 0;
+  border-bottom: 2px #34495e solid;
+  background-color: transparent;
   &:focus {
     outline:0;
+  }
+  &:invalid {
+    border-color: red;
   }
 }
 
