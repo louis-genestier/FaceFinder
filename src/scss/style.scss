@@ -23,6 +23,12 @@ h2 {
   font-size: 20px;
 }
 
+input {
+  &:focus {
+    outline:0;
+  }
+}
+
 .play {
   margin-top: 50px;
   color: #34495e;
