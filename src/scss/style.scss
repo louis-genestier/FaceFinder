@@ -43,6 +43,12 @@ input {
   animation: shake 0.70s cubic-bezier(.36,.07,.19,.97) both;
 }
 
+.category {
+  text-transform: capitalize;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
 .play {
   margin-top: 50px;
   color: #34495e;

@@ -25,78 +25,97 @@ var bhl         = require('/img/bhl.png'),
 let imgs = [{
   src: bhl,
   name: 'Bernard Henri Lévy',
+  category : 'Politique'
 },
 {
   src: mimi,
-  name: 'Mimi Mathy'
+  name: 'Mimi Mathy',
+  category: 'Cinéma (français)'
 },
 {
   src: sarko,
-  name: 'Nicolas Sarkozy'
+  name: 'Nicolas Sarkozy',
+  category: 'Politique'
 },
 {
   src: marinelepen,
-  name: 'marine le pen'
+  name: 'marine le pen',
+  category: 'Politique'
 },
 {
   src: melenchon,
-  name: 'Jean Luc Melenchon'
+  name: 'Jean Luc Melenchon',
+  category: 'Politique'
 },
 {
   src: macron,
-  name: 'Emmanuel Macron'
+  name: 'Emmanuel Macron',
+  category: 'Politique'
 },
 {
   src: bigard,
-  name: 'Bigard'
+  name: 'Bigard',
+  category: 'humour'
 },
 {
   src: booba,
-  name: 'booba'
+  name: 'booba',
+  category: 'rap (français)'
 },
 {
   src: brucewillis,
-  name: 'bruce willis'
+  name: 'bruce willis',
+  category: 'cinéma (us)'
 },
 {
   src: diams,
-  name: 'diam\'s'
+  name: 'diam\'s',
+  category: 'rap (français)'
 },
 {
   src: kaaris,
-  name: 'kaaris'
+  name: 'kaaris',
+  category: 'rap (français)'
 },
 {
   src: mbappe,
-  name: 'M\'bappé'
+  name: 'M\'bappé',
+  category: 'sport'
 },
 {
   src: cage,
-  name: 'nicolas cage'
+  name: 'nicolas cage',
+  category: 'cinéma (us)'
 },
 {
   src: sy,
-  name: 'omar sy'
+  name: 'omar sy',
+  category: 'cinéma (français)'
 },
 {
   src: passe,
-  name: 'passe partout'
+  name: 'passe partout',
+  category: 'télévision (français)'
 },
 {
   src: sebastien,
-  name: 'patrick sebastien'
+  name: 'patrick sebastien',
+  category: 'télévision (français)'
 },
 {
   src: ramimalek,
-  name: 'rami malek'
+  name: 'rami malek',
+  category: 'cinéma (us)'
 },
 {
   src: trump,
-  name: 'donald trump'
+  name: 'donald trump',
+  category: 'politique'
 },
 {
   src: zidane,
-  name: 'zinedine zidane'
+  name: 'zinedine zidane',
+  category: 'sport'
 },
 
 ];
@@ -147,5 +166,6 @@ function randomize() {
   } else {
     img.setAttribute("src", imgs[random].src);
     name = imgs[random].name;
+    document.querySelector('.category').innerHTML = imgs[random].category;
   } 
 }
