@@ -4,7 +4,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  font-family: 'Gotham';
+  font-family: 'Montserrat';
   background-color: #ecf0f1;
   color: #34495e;
   .homepage {
@@ -58,7 +58,7 @@ input {
   height: 60px;
   background: none;
   border: 1px solid #34495e;
-  transition: 1s;
+  transition: 0.3s;
   cursor: pointer;
   &:focus {
     outline:0;
