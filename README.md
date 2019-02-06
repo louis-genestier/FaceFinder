@@ -1,5 +1,5 @@
 # FaceFinder
-============
+
 [Link to try](https://facefinder.netlify.com)
 
 ## Todo
