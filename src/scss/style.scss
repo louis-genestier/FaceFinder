@@ -33,13 +33,14 @@ input {
   width: 400px;
   font-size: 30px;
   margin-top: 20px;
+  transition: 0.2s border-color;
   &:focus {
     outline:0;
   }
-  &:invalid {
-    border-color: #e74c3c;
-    animation: shake 0.70s cubic-bezier(.36,.07,.19,.97) both;
-  }
+}
+
+.invalid {
+  animation: shake 0.70s cubic-bezier(.36,.07,.19,.97) both;
 }
 
 .play {
