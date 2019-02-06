@@ -1,6 +1,10 @@
-let img = document.querySelector('img');
-var score = 0;
+let img        = document.querySelector('img'),
+    input      = document.querySelector('input'),
+    skipButton = document.querySelector('.skipButton');
+var score = 0,
+    skip  = 2;
 var name;
+
 
 var bhl         = require('/img/bhl.png'),
     mimi        = require('/img/mimimathy.png'),
@@ -24,7 +28,7 @@ var bhl         = require('/img/bhl.png'),
 
 let imgs = [{
   src: bhl,
-  name: 'Bernard Henri Lévy',
+  name: ['Bernard Henri Lévy', 'bhl'],
   category : 'Politique'
 },
 {
@@ -34,22 +38,22 @@ let imgs = [{
 },
 {
   src: sarko,
-  name: 'Nicolas Sarkozy',
+  name: ['Nicolas Sarkozy', 'Sarkozy'],
   category: 'Politique'
 },
 {
   src: marinelepen,
-  name: 'marine le pen',
+  name: ['marine le pen', 'le pen'],
   category: 'Politique'
 },
 {
   src: melenchon,
-  name: 'Jean Luc Melenchon',
+  name: ['Jean Luc Melenchon', 'melenchon'],
   category: 'Politique'
 },
 {
   src: macron,
-  name: 'Emmanuel Macron',
+  name: ['Emmanuel Macron', 'macron'],
   category: 'Politique'
 },
 {
@@ -120,24 +124,51 @@ let imgs = [{
 
 ];
 
-randomize();
+init();
 
-document.querySelector('input').addEventListener('keydown', function(e) {
+input.addEventListener('keydown', function(e) {
   if(e.keyCode == 13) {
     if (!this.value.localeCompare(name, undefined, {sensitivity: 'base'})) {
-      this.setCustomValidity('');
-      greenBorder();
-      setTimeout(function(){resetBorder()}, 700);
-      updateScore();
-      this.value = '';
-      randomize();
+      validAnswer();
     } else {
-      redBorder();
-      setTimeout(function(){resetBorder()}, 800);
-      this.setCustomValidity("Invalid field.");
+      invalidAnswer();
     }
   }
 })
+
+skipButton.addEventListener('click', function() {
+  if(skip > 0) {
+    skip--;
+    randomize();
+    skipButton.innerHTML = "Passer " + skip + "/2";
+    if(skip == 0) {
+      skipButton.setAttribute('disabled', 'disabled');
+    }
+  } 
+})
+
+function init() {
+  randomize();
+  skipButton.innerHTML = "Passer " + skip + "/2";
+}
+
+function skip() {
+  skip--;
+  randomize();
+}
+
+function invalidAnswer() {
+  redBorder();
+  setTimeout(function(){resetBorder()}, 800);
+}
+
+function validAnswer() {
+  greenBorder();
+  setTimeout(function(){resetBorder()}, 700);
+  updateScore();
+  input.value = '';
+  randomize();
+}
 
 function updateScore() {
   score++;
