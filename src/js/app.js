@@ -7,11 +7,24 @@ var bhl         = require('/img/bhl.png'),
     sarko       = require('/img/sarkozy.png'),
     marinelepen = require('/img/marinelepen.png'),
     melenchon   = require('/img/melenchon.png'),
-    macron      = require('/img/macron.png');
+    macron      = require('/img/macron.png'),
+    bigard      = require('/img/bigard.jpg'),
+    booba       = require('/img/booba.jpg'),
+    brucewillis = require('/img/brucewillis.jpg'),
+    diams       = require('/img/diams.jpg'),
+    kaaris      = require('/img/kaaris.jpg'),
+    mbappe      = require('/img/mbappe.jpg'),
+    cage        = require('/img/nicolascage.jpg'),
+    sy          = require('/img/omarsy.jpg'),
+    passe       = require('/img/passepartout.jpg'),
+    sebastien   = require('/img/patricksebastien.jpg'),
+    ramimalek   = require('/img/ramimalek.jpg'),
+    trump       = require('/img/trump.jpg'),
+    zidane      = require('/img/zidane.jpg');
 
 let imgs = [{
   src: bhl,
-  name: 'Bernard-Henri Lévy',
+  name: 'Bernard Henri Lévy',
 },
 {
   src: mimi,
@@ -27,12 +40,65 @@ let imgs = [{
 },
 {
   src: melenchon,
-  name: 'Jean-Luc Melenchon'
+  name: 'Jean Luc Melenchon'
 },
 {
   src: macron,
   name: 'Emmanuel Macron'
-}
+},
+{
+  src: bigard,
+  name: 'Bigard'
+},
+{
+  src: booba,
+  name: 'booba'
+},
+{
+  src: brucewillis,
+  name: 'bruce willis'
+},
+{
+  src: diams,
+  name: 'diam\'s'
+},
+{
+  src: kaaris,
+  name: 'kaaris'
+},
+{
+  src: mbappe,
+  name: 'M\'bappé'
+},
+{
+  src: cage,
+  name: 'nicolas cage'
+},
+{
+  src: sy,
+  name: 'omar sy'
+},
+{
+  src: passe,
+  name: 'passe partout'
+},
+{
+  src: sebastien,
+  name: 'patrick sebastien'
+},
+{
+  src: ramimalek,
+  name: 'rami malek'
+},
+{
+  src: trump,
+  name: 'donald trump'
+},
+{
+  src: zidane,
+  name: 'zinedine zidane'
+},
+
 ];
 
 randomize();
