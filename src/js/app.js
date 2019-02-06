@@ -2,9 +2,12 @@ let img = document.querySelector('img');
 var score = 0;
 var name;
 
-var bhl = require('/img/bhl.png');
-var mimi = require('/img/mimimathy.png');
-var sarko = require('/img/sarkozy.png');
+var bhl         = require('/img/bhl.png'),
+    mimi        = require('/img/mimimathy.png'),
+    sarko       = require('/img/sarkozy.png'),
+    marinelepen = require('/img/marinelepen.png'),
+    melenchon   = require('/img/melenchon.png'),
+    macron      = require('/img/macron.png');
 
 let imgs = [{
   src: bhl,
@@ -17,6 +20,18 @@ let imgs = [{
 {
   src: sarko,
   name: 'Nicolas Sarkozy'
+},
+{
+  src: marinelepen,
+  name: 'marine le pen'
+},
+{
+  src: melenchon,
+  name: 'Jean-Luc Melenchon'
+},
+{
+  src: macron,
+  name: 'Emmanuel Macron'
 }
 ];
 
@@ -27,7 +42,7 @@ document.querySelector('input').addEventListener('keydown', function(e) {
     if (!this.value.localeCompare(name, undefined, {sensitivity: 'base'})) {
       this.setCustomValidity('');
       greenBorder();
-      setTimeout(function(){resetBorder()}, 800);
+      setTimeout(function(){resetBorder()}, 700);
       updateScore();
       this.value = '';
       randomize();
@@ -55,7 +70,7 @@ function greenBorder() {
 
 function resetBorder() {
   document.querySelector('input').style.borderColor = "#34495e";
-  document.querySelector('input').className = "";
+  document.querySelector('input').classList.remove('invalid');
 }
 
 function randomize() {
