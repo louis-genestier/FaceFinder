@@ -2,7 +2,8 @@ let img        = document.querySelector('img'),
     input      = document.querySelector('input'),
     skipButton = document.querySelector('.skipButton');
 var score = 0,
-    skip  = 2;
+    skip  = 2, 
+    random;
 var name;
 
 
@@ -28,97 +29,97 @@ var bhl         = require('/img/bhl.png'),
 
 let imgs = [{
   src: bhl,
-  name: ['Bernard Henri Lévy', 'bhl'],
+  names: ['Bernard Henri Lévy', 'bhl', 'Bernard-Henri Lévy'],
   category : 'Politique'
 },
 {
   src: mimi,
-  name: 'Mimi Mathy',
+  names: ['Mimi Mathy'],
   category: 'Cinéma (français)'
 },
 {
   src: sarko,
-  name: ['Nicolas Sarkozy', 'Sarkozy'],
+  names: ['Nicolas Sarkozy', 'Sarkozy'],
   category: 'Politique'
 },
 {
   src: marinelepen,
-  name: ['marine le pen', 'le pen'],
+  names: ['marine le pen', 'le pen'],
   category: 'Politique'
 },
 {
   src: melenchon,
-  name: ['Jean Luc Melenchon', 'melenchon'],
+  names: ['Jean Luc Melenchon', 'melenchon', 'jean-luc melenchon'],
   category: 'Politique'
 },
 {
   src: macron,
-  name: ['Emmanuel Macron', 'macron'],
+  names: ['Emmanuel Macron', 'macron'],
   category: 'Politique'
 },
 {
   src: bigard,
-  name: 'Bigard',
+  names: ['Bigard', 'jean-marie bigard', 'jean marie bigard'],
   category: 'humour'
 },
 {
   src: booba,
-  name: 'booba',
+  names: ['booba'],
   category: 'rap (français)'
 },
 {
   src: brucewillis,
-  name: 'bruce willis',
+  names: ['bruce willis'],
   category: 'cinéma (us)'
 },
 {
   src: diams,
-  name: 'diam\'s',
+  names: ['diam\'s', 'diams'],
   category: 'rap (français)'
 },
 {
   src: kaaris,
-  name: 'kaaris',
+  names: ['kaaris'],
   category: 'rap (français)'
 },
 {
   src: mbappe,
-  name: 'M\'bappé',
+  names: ['M\'bappé', 'mbappe', 'kylian mbappe'],
   category: 'sport'
 },
 {
   src: cage,
-  name: 'nicolas cage',
+  names: ['nicolas cage'],
   category: 'cinéma (us)'
 },
 {
   src: sy,
-  name: 'omar sy',
+  names: ['omar sy'],
   category: 'cinéma (français)'
 },
 {
   src: passe,
-  name: 'passe partout',
+  names: ['passe partout', 'passe-partout'],
   category: 'télévision (français)'
 },
 {
   src: sebastien,
-  name: 'patrick sebastien',
+  names: ['patrick sebastien'],
   category: 'télévision (français)'
 },
 {
   src: ramimalek,
-  name: 'rami malek',
+  names: ['rami malek'],
   category: 'cinéma (us)'
 },
 {
   src: trump,
-  name: 'donald trump',
+  names: ['donald trump', 'trump'],
   category: 'politique'
 },
 {
   src: zidane,
-  name: 'zinedine zidane',
+  names: ['zinedine zidane', 'zidane'],
   category: 'sport'
 },
 
@@ -128,9 +129,14 @@ init();
 
 input.addEventListener('keydown', function(e) {
   if(e.keyCode == 13) {
-    if (!this.value.localeCompare(name, undefined, {sensitivity: 'base'})) {
-      validAnswer();
-    } else {
+    var found = false;
+    imgs[random].names.forEach(name => {
+      if(this.value.localeCompare(name, undefined, {sensitivity: 'base'}) === 0) {
+        validAnswer();
+        found = true;
+      }
+    })
+    if(!found) {
       invalidAnswer();
     }
   }
@@ -191,12 +197,12 @@ function resetBorder() {
 
 function randomize() {
   var max = imgs.length;
-  var random = Math.floor(Math.random() * Math.floor(max));
-  if (name == imgs[random].name) {
+  random = Math.floor(Math.random() * Math.floor(max));
+  if(name == imgs[random].names[0]) {
     randomize();
   } else {
     img.setAttribute("src", imgs[random].src);
-    name = imgs[random].name;
+    name = imgs[random].names[0];
     document.querySelector('.category').innerHTML = imgs[random].category;
-  } 
+  }
 }
