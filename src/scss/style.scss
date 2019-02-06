@@ -6,27 +6,33 @@ body {
   height: 100vh;
   font-family: 'Gotham';
   background-color: #ecf0f1;
+  color: #34495e;
   .homepage {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 70px;
   font-weight: 700;
-  color: #34495e;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 40px;
 }
 
 input {
   border: 0;
   border-bottom: 2px #34495e solid;
   background-color: transparent;
+  width: 400px;
+  font-size: 30px;
+  margin-top: 20px;
   &:focus {
     outline:0;
   }
@@ -38,10 +44,10 @@ input {
 .play {
   margin-top: 50px;
   color: #34495e;
-  font-size: 20px;
-  letter-spacing: 2px;
-  width: 100px;
-  height: 40px;
+  font-size: 40px;
+  letter-spacing: 3px;
+  width: 150px;
+  height: 60px;
   background: none;
   border: 1px solid #34495e;
   transition: 1s;
@@ -54,4 +60,19 @@ input {
     background: #34495e;
     color: #ecf0f1;
   }
+}
+
+.info {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.game-panel {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
