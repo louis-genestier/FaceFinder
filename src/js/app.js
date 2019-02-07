@@ -148,7 +148,10 @@ skipButton.addEventListener('click', function() {
     randomize();
     skipButton.innerHTML = "Passer " + skip + "/2";
     if(skip == 0) {
-      skipButton.setAttribute('disabled', 'disabled');
+      skipButton.style.border = "0";
+      skipButton.style.background = "#34495e";
+      skipButton.style.color = "#ecf0f1";
+      skipButton.style.cursor = "not-allowed";
     }
   } 
 })

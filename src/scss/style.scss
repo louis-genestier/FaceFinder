@@ -49,7 +49,7 @@ input {
   font-size: 20px;
 }
 
-.play {
+.play, .skipButton {
   margin-top: 50px;
   color: #34495e;
   font-size: 40px;
@@ -68,6 +68,12 @@ input {
     background: #34495e;
     color: #ecf0f1;
   }
+}
+.skipButton {
+  margin-top: 10px;
+  font-size: 30px;
+  width: 200px;
+  height: 50px;
 }
 
 .info {
