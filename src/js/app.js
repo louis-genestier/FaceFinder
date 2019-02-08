@@ -1,7 +1,7 @@
 let img        = document.querySelector('img'),
     input      = document.querySelector('input'),
     skipButton = document.querySelector('.skipButton'),
-    svgLight    = '<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path id="light" style="fill:#34495e" d="M8 24l2.674-9h-9.674l16-15-2.674 9h8.674l-15 15zm-1.586-11h6.912l-1.326 4 5.739-6h-6.065l1.304-4-6.564 6z"/></svg>';
+    svgLight    = '⚡';
 var score = 0,
     skip  = 2, 
     random;
