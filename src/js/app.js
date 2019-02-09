@@ -145,15 +145,7 @@ input.addEventListener('keydown', function(e) {
 
 skipButton.addEventListener('click', function() {
   if(skip > 0) {
-    skip--;
-    randomize();
-    skipButton.innerHTML = svgLight + " Passer " + skip + "/2";
-    if(skip == 0) {
-      skipButton.style.border = "0";
-      skipButton.style.background = "#34495e";
-      skipButton.style.color = "#ecf0f1";
-      skipButton.style.cursor = "not-allowed";
-    }
+    skipCharacter();
   } 
 })
 
@@ -162,9 +154,16 @@ function init() {
   skipButton.innerHTML = svgLight + " Passer " + skip + "/2";
 }
 
-function skip() {
+function skipCharacter() {
   skip--;
   randomize();
+  skipButton.innerHTML = svgLight + " Passer " + skip + "/2";
+   if(skip == 0) {
+    skipButton.style.border = "0";
+    skipButton.style.background = "#34495e";
+    skipButton.style.color = "#ecf0f1";
+    skipButton.style.cursor = "not-allowed";
+  }
 }
 
 function invalidAnswer() {
