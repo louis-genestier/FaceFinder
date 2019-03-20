@@ -7,119 +7,98 @@ var score = 0,
     random;
 var name;
 
-
-var bhl         = require('/img/bhl.png'),
-    mimi        = require('/img/mimimathy.png'),
-    sarko       = require('/img/sarkozy.png'),
-    marinelepen = require('/img/marinelepen.png'),
-    melenchon   = require('/img/melenchon.png'),
-    macron      = require('/img/macron.png'),
-    bigard      = require('/img/bigard.jpg'),
-    booba       = require('/img/booba.jpg'),
-    brucewillis = require('/img/brucewillis.jpg'),
-    diams       = require('/img/diams.jpg'),
-    kaaris      = require('/img/kaaris.jpg'),
-    mbappe      = require('/img/mbappe.jpg'),
-    cage        = require('/img/nicolascage.jpg'),
-    sy          = require('/img/omarsy.jpg'),
-    passe       = require('/img/passepartout.jpg'),
-    sebastien   = require('/img/patricksebastien.jpg'),
-    ramimalek   = require('/img/ramimalek.jpg'),
-    trump       = require('/img/trump.jpg'),
-    zidane      = require('/img/zidane.jpg');
-
 let imgs = [{
-  src: bhl,
+  src: 'img/bhl.png',
   names: ['Bernard Henri Lévy', 'bhl', 'Bernard-Henri Lévy'],
   category : 'Politique'
 },
 {
-  src: mimi,
+  src: 'img/mimimathy.png',
   names: ['Mimi Mathy'],
   category: 'Cinéma (français)'
 },
 {
-  src: sarko,
+  src: 'img/sarkozy.png',
   names: ['Nicolas Sarkozy', 'Sarkozy'],
   category: 'Politique'
 },
 {
-  src: marinelepen,
+  src: 'img/marinelepen.png',
   names: ['marine le pen', 'le pen'],
   category: 'Politique'
 },
 {
-  src: melenchon,
+  src: 'img/melenchon.png',
   names: ['Jean Luc Melenchon', 'melenchon', 'jean-luc melenchon'],
   category: 'Politique'
 },
 {
-  src: macron,
+  src: 'img/macron.png',
   names: ['Emmanuel Macron', 'macron'],
   category: 'Politique'
 },
 {
-  src: bigard,
+  src: 'img/bigard.jpg',
   names: ['Bigard', 'jean-marie bigard', 'jean marie bigard'],
   category: 'humour'
 },
 {
-  src: booba,
+  src: 'img/booba.jpg',
   names: ['booba'],
   category: 'rap (français)'
 },
 {
-  src: brucewillis,
+  src: 'img/brucewillis.jpg',
   names: ['bruce willis'],
   category: 'cinéma (us)'
 },
 {
-  src: diams,
+  src: 'img/diams.jpg',
   names: ['diam\'s', 'diams'],
   category: 'rap (français)'
 },
 {
-  src: kaaris,
+  src: 'img/kaaris.jpg',
   names: ['kaaris'],
   category: 'rap (français)'
 },
 {
-  src: mbappe,
+  src: 'img/mbappe.jpg',
   names: ['M\'bappé', 'mbappe', 'kylian mbappe'],
   category: 'sport'
 },
 {
-  src: cage,
+  src: 'img/nicolascage.jpg',
   names: ['nicolas cage'],
   category: 'cinéma (us)'
 },
 {
-  src: sy,
+  src: 'img/omarsy.jpg',
   names: ['omar sy'],
   category: 'cinéma (français)'
 },
 {
-  src: passe,
+  src: 'img/passepartout.jpg',
   names: ['passe partout', 'passe-partout'],
   category: 'télévision (français)'
 },
 {
-  src: sebastien,
+  src: 'img/patricksebastien.jpg',
   names: ['patrick sebastien'],
   category: 'télévision (français)'
 },
 {
-  src: ramimalek,
+  src: 'img/ramimalek.jpg',
   names: ['rami malek'],
   category: 'cinéma (us)'
 },
 {
-  src: trump,
+  src: 'img/trump.jpg',
   names: ['donald trump', 'trump'],
   category: 'politique'
 },
 {
-  src: zidane,
+  src: 'img/zidane.jpg',
   names: ['zinedine zidane', 'zidane'],
   category: 'sport'
 },
