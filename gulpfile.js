@@ -53,4 +53,4 @@ function js() {
         .pipe(dest('dist/js/'));
 }
 exports.dev = series(clean, parallel(html, scss, img, js), serve, listen);
-exports.build = series(html);
+exports.build = series(clean, parallel(html, scss, img, js));
